@@ -13,15 +13,15 @@ export const Tutorials = () => {
         <Image style={styles.img} source={require("../../../assets/img/swipe.png")} />
         <Text style={styles.leg}>Arrastar direita/esquerda: mover entre os itens</Text>
       </View>
-      
-      <View style={styles.container}>   
-        <Image style={styles.img} source={require("../../../assets/img/vector.png")}/>
+
+      <View style={styles.container}>
+        <Image style={styles.img} source={require("../../../assets/img/Group.png")} />
         <Text style={styles.leg}>Toque duplo: selecionar</Text>
       </View>
-      <View>
-      <TouchableOpacity style={styles.btnUp}>Pular</TouchableOpacity>
-      <TouchableOpacity style={styles.btnRepeat}>Repetir</TouchableOpacity>    
-      <TouchableOpacity style={styles.btAdvance}>Avançar</TouchableOpacity>
+      <View style={styles.btnContainer}>
+        <TouchableOpacity style={styles.btnUp}>Pular</TouchableOpacity>
+        <TouchableOpacity style={styles.btnRepeat}>Repetir</TouchableOpacity>
+        <TouchableOpacity style={styles.btnAdvance}>Avançar</TouchableOpacity>
       </View>
 
     </View>
@@ -30,78 +30,86 @@ export const Tutorials = () => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 20,
-    marginVertical: 15,
-  
+    flex: 1,
+    backgroundColor: '#FAFAFA',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 19, // Margem lateral exata do Figma
+    paddingTop: 50,
+    paddingBottom: 49, // Espaçamento exato do botão avançar até o fim da tela
   },
   title: {
-    fontSize: 25,
-    fontWeight: "bold",
-    color: "#000066", 
-    textAlign: "center",
-    marginBottom: 50,
-    paddingBottom:20,
+    /*fontFamily: 'Open Sans',*/
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#00008B', // Azul escuro oficial
+    textAlign: 'center',
+    marginTop: 16,
   },
   card: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-  },
-  leg: {
-    maxWidth: "80%",
-    fontSize: 24,
-    fontWeight: "600",
-    color: "#000000",
-    textAlign: "center",
-    marginTop: 15,
-    lineHeight: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    flex: 1,
   },
   img: {
-    width: 190,
-    height: 190,
-    resizeMode: "contain",
-    
-   },
+    width: 130,
+    height: 130,
+    resizeMode: 'contain',
+  },
+  leg: {
+    fontWeight: 'bold',
+    color: '#000000',
+    textAlign: 'center',
+    marginTop: 15,
+    maxWidth: '85%',
+    fontSize: 23,
+  },
+  btnContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 49,
+  },
   btnUp: {
-    backgroundColor: "#E0E0E0", 
-    width: "300%",
-    height: 50,
-    fontSize: 22,
-    borderRadius: 25,
-    justifyContent:"center",
-    alignItems: "center",
-    alignSelf: "flex-end",
-    marginLeft: "4%",
-    
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
+    width: 171,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#E0E0E0',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 24,
+
   },
   btnRepeat: {
-    backgroundColor: "#D94B06", 
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
+    width: 171,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#DD4A00',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 24,
     color: COLORS.white,
-    width: "300%",
-    height: 50,
-    fontSize: 22,
-    borderRadius: 25,
-    justifyContent:"center",
-    alignItems: "center",
-    alignSelf: "flex-start",
-    marginRight: "4%",
-    marginTop: -50, 
-  
   },
-  btAdvance: {
-    backgroundColor: "#000099",  
+  btnAdvance: {
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
+    width: 200,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#00008B',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 30,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    fontSize: 24,
     color: COLORS.white,
-    width: "300%",
-    height: 50,
-    fontSize: 22,
-    borderRadius: 25,
-    justifyContent:"center",
-    alignItems: "center",
-    alignSelf: "center",
-    marginTop: 25,
   },
 });
-
 export default Tutorials;

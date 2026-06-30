@@ -1,108 +1,116 @@
 import React, { useState } from "react";
 import { COLORS } from './../theme/AppTheme';
 import {
-  View, Text, Image, StyleSheet, ToastAndroid, Platform, TouchableOpacity,
+    View, Text, Image, StyleSheet, ToastAndroid, Platform, TouchableOpacity,
 } from "react-native";
 
 export const Tutorials2 = () => {
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Respostas do Olhuz</Text>
-      <View style={styles.card}>
-        <Image style={styles.img} source={require("../../../assets/img/Group 90.png")} />
-        <Text style={styles.leg}>Voz: lê o que está na tela
-Som: alerta e ações</Text>
-      </View>
-      
-      <View style={styles.container}>   
-        <Image style={styles.img} source={require("../../../assets/img/Group.png")}/>
-        <Text style={styles.leg}>Vibração: confirma escolhas</Text>
-      </View>
-      <View>
-      <TouchableOpacity style={styles.btnUp}>Pular</TouchableOpacity>
-      <TouchableOpacity style={styles.btnRepeat}>Repetir</TouchableOpacity>    
-      <TouchableOpacity style={styles.btAdvance}>Avançar</TouchableOpacity>
-      </View>
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Respostas do Olhuz</Text>
+            <View style={styles.card}>
+                <Image style={styles.img} source={require("../../../assets/img/Group 90 (1).png")} />
+                <Text style={styles.leg}>Voz: lê o que está na tela
+                    Som: alerta e ações</Text>
+            </View>
 
-    </View>
-  );
+            <View style={styles.container}>
+                <Image style={styles.img} source={require("../../../assets/img/vector.png")} />
+                <Text style={styles.leg}>Vibração: confirma escolhas</Text>
+                </View>
+            <View style={styles.btnContainer}>
+                <TouchableOpacity style={styles.btnUp}>Pular</TouchableOpacity>
+                <TouchableOpacity style={styles.btnRepeat}>Repetir</TouchableOpacity>
+                <TouchableOpacity style={styles.btnAdvance}>Avançar</TouchableOpacity>
+            </View>
+
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 20,
-    marginVertical: 15,
-  
-  },
-  title: {
-    fontSize: 25,
-    fontWeight: "bold",
-    color: "#000066", 
-    textAlign: "center",
-    marginBottom: 50,
-    paddingBottom:20,
-  },
-  card: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-  },
-  leg: {
-    maxWidth: "80%",
-    fontSize: 24,
-    fontWeight: "600",
-    color: "#000000",
-    textAlign: "center",
-    marginTop: 15,
-    lineHeight: 24,
-  },
-  img: {
-    width: 190,
-    height: 190,
-    resizeMode: "contain",
-    
-   },
-  btnUp: {
-    backgroundColor: "#E0E0E0", 
-    width: "300%",
-    height: 50,
-    fontSize: 22,
-    borderRadius: 25,
-    justifyContent:"center",
-    alignItems: "center",
-    alignSelf: "flex-end",
-    marginLeft: "4%",
-    
-  },
-  btnRepeat: {
-    backgroundColor: "#D94B06", 
-    color: COLORS.white,
-    width: "300%",
-    height: 50,
-    fontSize: 22,
-    borderRadius: 25,
-    justifyContent:"center",
-    alignItems: "center",
-    alignSelf: "flex-start",
-    marginRight: "4%",
-    marginTop: -50, 
-  
-  },
-  btAdvance: {
-    backgroundColor: "#000099",  
-    color: COLORS.white,
-    width: "300%",
-    height: 50,
-    fontSize: 22,
-    borderRadius: 25,
-    justifyContent:"center",
-    alignItems: "center",
-    alignSelf: "center",
-    marginTop: 25,
-  },
-});
+    container: {
+        flex: 1,
+        backgroundColor: '#FAFAFA',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 19, // Margem lateral exata do Figma
+        paddingTop: 50,
+        paddingBottom: 49, // Espaçamento exato do botão avançar até o fim da tela
+    },
+    title: {
+        /*fontFamily: 'Open Sans',*/
+        fontSize: 26,
+        fontWeight: 'bold',
+        color: '#00008B', // Azul escuro oficial
+        textAlign: 'center',
+        marginTop: 16,
+    },
+    card: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        flex: 1,
+    },
+    img: {
+        width: 130,
+        height: 130,
+        resizeMode: 'contain',
+    },
+    leg: {
+        fontWeight: 'bold',
+        color: '#000000',
+        textAlign: 'center',
+        marginTop: 15,
+        maxWidth: '85%',
+        fontSize: 23,
+    },
+    btnContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 49,
+    },
+    btnUp: {
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
+        width: 171,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: '#E0E0E0',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 24,
 
+    },
+    btnRepeat: {
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
+        width: 171,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: '#DD4A00',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 24,
+        color: COLORS.white,
+    },
+    btnAdvance: {
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
+        width: 200,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: '#00008B',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 30,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        fontSize: 24,
+        color: COLORS.white,
+    },
+});
 export default Tutorials2;
