@@ -46,45 +46,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 49,
     },
-    btnUp: {
-        fontFamily: 'Open Sans',
-        fontWeight: 'bold',
-        width: 171,
-        height: 60,
-        borderRadius: 30,
-        backgroundColor: '#E0E0E0',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 24,
-
-    },
-    btnRepeat: {
-        fontFamily: 'Open Sans',
-        fontWeight: 'bold',
-        width: 171,
-        height: 60,
-        borderRadius: 30,
-        backgroundColor: '#DD4A00',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 24,
-        color: COLORS.white,
-    },
-    btnAdvance: {
-        fontFamily: 'Open Sans',
-        fontWeight: 'bold',
-        width: 200,
-        height: 60,
-        borderRadius: 30,
-        backgroundColor: '#00008B',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 30,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        fontSize: 24,
-        color: COLORS.white,
+    twobtn: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
 });
 
-export default styles
+export default styles;
