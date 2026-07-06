@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { COLORS } from './../theme/AppTheme';
 import {
     View, Text, Image, StyleSheet, ToastAndroid, Platform, TouchableOpacity,
@@ -24,7 +24,7 @@ export const Tutorials2 = () => {
                 <TouchableOpacity style={styles.btnRepeat}>Repetir</TouchableOpacity>
                 <TouchableOpacity style={styles.btnAdvance}>Avançar</TouchableOpacity>
             </View>
-
+            
         </View>
     );
 };
