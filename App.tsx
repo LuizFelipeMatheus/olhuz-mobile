@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export type RootStackParamList = {
   Tutorials: undefined;
+  Tutorials2: undefined;
   };
 
 
