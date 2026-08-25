@@ -1,28 +1,64 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { HomeScreen } from "./views/HomePage/Home";
 import { RegisterScreen } from "./views/RegisterPage/Register";
+import { LoginScreen } from "./views/LoginPage/Login";
+import { TokenScreen } from "./views/ReceberTokenPage/TokenPage";
+import { AlterarSenhaScreen } from "./views/AlterarSenhaPage/AlterarSenhaPage";
+import { ValidarTokenScreen } from "./views/ValidarTokenPage/ValidarTokenPage";
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  Register: undefined;
+  RegisterScreen: undefined;
+   Login: undefined;
+  TokenScreen: undefined;
+  AlterarSenhaScreen: { email: string };
+  ValidarTokenScreen: { email: string };
+  };
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         <Stack.Screen
-          name="HomePage"
+          name="Home"
           component={HomeScreen}
-          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+          />
+        <Stack.Screen
+          name="RegisterScreen"
+          component={RegisterScreen}
         />
 
         <Stack.Screen
-          name="RegisterPage"
-          component={RegisterScreen}
-          options={{ headerShown: false }}
+          name="TokenScreen"
+          component={TokenScreen}
         />
+
+        <Stack.Screen
+          name="AlterarSenhaScreen"
+          component={AlterarSenhaScreen}
+        />
+
+        <Stack.Screen
+          name="ValidarTokenScreen"
+          component={ValidarTokenScreen}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
