@@ -14,7 +14,7 @@ import {
 } from "@react-navigation/native";
 
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../App";
+import { RootStackParamList } from "../../../../App";
 import { ValidarTokenViewModel } from "./ViewModelValidarToken";
 
 type RouteProps = RouteProp<

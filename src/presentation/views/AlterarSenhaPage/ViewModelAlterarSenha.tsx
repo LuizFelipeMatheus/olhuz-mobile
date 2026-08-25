@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Alert } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../App";
+import { RootStackParamList } from "../../../../App";
 
 export function AlterarSenhaScreenViewModel(
   navigation: NativeStackNavigationProp<RootStackParamList>,
