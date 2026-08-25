@@ -6,7 +6,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { COLORS } from "../../theme/AppTheme";
 import { ButtonCard } from "../../../components/ButtonCard";
 // Importação da estilização
-import styles from "./../../theme/HomeStyles";
+import styles from "../../theme/HomeStyles";
 
 import { Aperture, ImageUp } from "lucide-react-native";
 import { InfoCard } from "../../../components/InfoCard";

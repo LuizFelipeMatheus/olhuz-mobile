@@ -5,7 +5,7 @@ import type { MainTabParamList } from "../types/navigation";
 import { House, FileText, Settings, UserRound } from "lucide-react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { HomeScreen } from "../presentation/views/Home/Home";
+import { HomeScreen } from "../presentation/views/home/Home";
 import { ReadingsScreen } from "../presentation/views/readings/Readings";
 //import { SettingsScreen } from "../presentation/views/settings/Settings";
 //import { ProfileScreen } from "../presentation/views/profile/Profile";
