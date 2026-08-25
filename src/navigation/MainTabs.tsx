@@ -7,8 +7,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { HomeScreen } from "../presentation/views/Home/Home";
 import { ReadingsScreen } from "../presentation/views/readings/Readings";
-import { SettingsScreen } from "../presentation/views/settings/Settings";
-import { ProfileScreen } from "../presentation/views/profile/Profile";
+//import { SettingsScreen } from "../presentation/views/settings/Settings";
+//import { ProfileScreen } from "../presentation/views/profile/Profile";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -50,13 +50,13 @@ export function MainTabs() {
         },
 
         tabBarActiveTintColor: COLORS.menuIconActive,
-        tabBarInactiveTintColor: COLORS.menuIconInactive,
+        tabBarInactiveTintColor: "#49587F",
         tabBarIcon: ({ color, size, focused }) => {
           const Icon = icons[route.name];
           return (
             <View
               style={{
-                backgroundColor: focused ? COLORS.bgIconActive : "transparent",
+                backgroundColor: focused ? "#DFE8FF" : "transparent",
                 paddingHorizontal: 20,
                 paddingVertical: 4,
                 borderRadius: 20,
@@ -82,7 +82,7 @@ export function MainTabs() {
         options={{ title: "Leituras" }}
       />
 
-      <Tab.Screen
+      {/*<Tab.Screen
         name="Settings"
         component={SettingsScreen}
         options={{ title: "Configurações" }}
@@ -92,7 +92,7 @@ export function MainTabs() {
         name="Profile"
         component={ProfileScreen}
         options={{ title: "Perfil" }}
-      />
+      />*/}
     </Tab.Navigator>
   );
 }
