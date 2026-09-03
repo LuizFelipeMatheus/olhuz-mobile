@@ -9,6 +9,7 @@ import { LoginScreen } from "./views/LoginPage/Login";
 import { TokenScreen } from "./views/ReceberTokenPage/TokenPage";
 import { AlterarSenhaScreen } from "./views/AlterarSenhaPage/AlterarSenhaPage";
 import { ValidarTokenScreen } from "./views/ValidarTokenPage/ValidarTokenPage";
+import { PerfilScreen } from "./views/Perfil/Perfil";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -31,7 +32,7 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Home"
           component={HomeScreen}
         />
@@ -57,6 +58,10 @@ export default function App() {
         <Stack.Screen
           name="ValidarTokenScreen"
           component={ValidarTokenScreen}
+        /> */}
+        <Stack.Screen
+          name="Register"
+          component={PerfilScreen}
         />
 
       </Stack.Navigator>

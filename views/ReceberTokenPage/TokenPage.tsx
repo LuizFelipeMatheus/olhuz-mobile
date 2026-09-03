@@ -12,7 +12,6 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { User } from 'lucide-react-native';
 import { RootStackParamList } from "../../App";
-import { TokenViewModel } from "./ViewModelToken";
 
 export function TokenScreen() {
   const navigation =
