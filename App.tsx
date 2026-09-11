@@ -8,7 +8,7 @@ import { RegisterScreen } from "./views/RegisterPage/Register";
 import { LoginScreen } from "./views/LoginPage/Login";
 import { TokenScreen } from "./views/ReceberTokenPage/TokenPage";
 import { AlterarSenhaScreen } from "./views/AlterarSenhaPage/AlterarSenhaPage";
-import { ValidarTokenScreen } from "./views/ValidarTokenPage/ValidarTokenPage";
+import { ValidarTokenScreen } from "./views/RegisterPage/ValidarTokenPage/ValidarTokenPage";
 import { PerfilScreen } from "./views/Perfil/Perfil";
 
 export type RootStackParamList = {

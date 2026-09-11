@@ -1,83 +1,108 @@
-import { useState } from "react";
-
+import { useState, useMemo } from "react";
 import { Alert } from "react-native";
-
-import {
-  NativeStackNavigationProp,
-} from "@react-navigation/native-stack";
-
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../App";
 
-export function ValidarTokenViewModel(
-  navigation: NativeStackNavigationProp<RootStackParamList>
-) {
-  const [token, setToken] = useState("");
+type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
 
-  const validarToken = (email: string) => {
+export function RegisterViewModel(navigation: NavigationProps) {
+  const [nome, setNome] = useState("");
+  const [dataNascimento, setDataNascimento] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmarSenha, setConfirmarSenha] = useState("");
+  const [aceitou, setAceitou] = useState(false);
+  const [carregando, setCarregando] = useState(false);
 
-    // JSON COM OS DADOS PREENCHIDOS PELO USUÁRIO
-    const tokenJson = {
-      email: email,
-      token: token,
-    };
+  // Calcula dinamicamente a força da senha de 0 a 5
+  const forcaSenha = useMemo(() => {
+    if (!senha) return 0;
+    let pontos = 0;
+    // Critério 1: Comprimento mínimo
+    if (senha.length >= 8) pontos += 1;
 
-    // Mostra o JSON no terminal
-    console.log(
-      "JSON DO USUÁRIO:",
-      JSON.stringify(tokenJson, null, 2)
-    );
+    // Critério 2: Letras minúsculas
+    if (/[a-z]/.test(senha)) pontos += 1;
 
-    // Verifica se o token foi preenchido
-    if (!token) {
-      Alert.alert(
-        validarTokenJson.mensagens.tokenVazio.titulo,
-        validarTokenJson.mensagens.tokenVazio.mensagem
-      );
+    // Critério 3: Letras maiúsculas
+    if (/[A-Z]/.test(senha)) pontos += 1;
 
+    // Critério 4: Números
+    if (/[0-9]/.test(senha)) pontos += 1;
+
+    // Critério 5: Caracteres especiais
+    if (/[^A-Za-z0-9]/.test(senha)) pontos += 1;
+
+    return pontos;
+  }, [senha]);
+
+  const cadastrar = async () => {
+    // 1. Validação de campos obrigatórios
+    if (!nome.trim() || !dataNascimento.trim() || !cpf.trim() || !email.trim() || !senha.trim()) {
+      Alert.alert("Erro", "Por favor, preencha todos os campos obrigatórios.");
       return;
     }
 
-    // Token preenchido
-    Alert.alert(
-      validarTokenJson.mensagens.tokenValidado.titulo,
-      validarTokenJson.mensagens.tokenValidado.mensagem
-    );
+    // 2. Validação de confirmação de senha
+    if (senha !== confirmarSenha) {
+      Alert.alert("Erro", "As senhas não coincidem.");
+      return;
+    }
 
-    // Navega para a tela de Login
-    navigation.navigate("Login");
-  };
+    // 3. Validação dos termos
+    if (!aceitou) {
+      Alert.alert("Erro", "Você precisa aceitar os Termos de Uso para continuar.");
+      return;
+    }
 
-  // JSON DA PÁGINA
-  const validarTokenJson = {
-    titulo: "Validar senha",
+    try {
+      setCarregando(true);
 
-    campo: {
-      token: {
-        placeholder: "Digite o código de validação",
-      },
-    },
+      // Exemplo de payload pronto para envio para API:
+      const payload = {
+        nome,
+        dataNascimento,
+        cpf,
+        email,
+        senha,
+      };
 
-    botao: {
-      texto: "Validar token",
-    },
+      // TODO: Substituir por chamada real da API
+      // await api.post('/registro', payload);
 
-    mensagens: {
-      tokenVazio: {
-        titulo: "Erro",
-        mensagem: "Digite o código de validação",
-      },
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      tokenValidado: {
-        titulo: "Sucesso",
-        mensagem: "Token validado!",
-      },
-    },
+      Alert.alert("Sucesso", "Conta criada com sucesso!", [
+        {
+          text: "OK",
+          onPress: () => navigation.navigate("ValidarTokenScreen", { email }),
+        },
+      ]);
+    } catch (error) {
+      Alert.alert("Erro", "Não foi possível criar a conta. Tente novamente.");
+    } finally {
+      setCarregando(false);
+    }
   };
 
   return {
-    token,
-    setToken,
-    validarToken,
-    validarTokenJson,
+    nome,
+    setNome,
+    dataNascimento,
+    setDataNascimento,
+    cpf,
+    setCpf,
+    email,
+    setEmail,
+    senha,
+    setSenha,
+    confirmarSenha,
+    setConfirmarSenha,
+    aceitou,
+    setAceitou,
+    forcaSenha,
+    carregando,
+    cadastrar,
   };
 }

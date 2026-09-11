@@ -87,13 +87,9 @@ const ViewModelLogin = (navigation: NavigationProps) => {
     acoes: {
 
       mostrarSenha: "Mostrar senha",
-
       ocultarSenha: "Ocultar senha",
-
       ouvirSenha: "Ouvir senha",
-
       esqueciSenha: "Esqueci minha senha",
-
       entrar: "Entrar",
 
     },
@@ -109,13 +105,9 @@ const ViewModelLogin = (navigation: NavigationProps) => {
   return {
 
     ...values,
-
     onChange,
-
     toggleMostrarSenha,
-
     entrar,
-
     loginJson,
 
   };

@@ -24,7 +24,7 @@ export const LoginScreen = () => {
     mostrarSenha,
     onChange,
     toggleMostrarSenha,
-  } = ViewModelLogin();
+ } = ViewModelLogin(navigation);
 
   return (
     <View style={styles.container}>

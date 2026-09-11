@@ -101,7 +101,7 @@ export const InicialScreen = () => {
                             minimumValue={0}
                             maximumValue={1}
                             value={volume}
-                            onValueChange={(value) => setVolume(value)}
+                            onValueChange={(value: number) => setVolume(value)}
                             minimumTrackTintColor="#1D3D87"  
                             maximumTrackTintColor="#E5E5E5"  
                             thumbTintColor="#1D3D87"        
