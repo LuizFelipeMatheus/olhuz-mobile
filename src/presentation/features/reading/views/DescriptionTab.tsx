@@ -4,7 +4,7 @@ import { Volume2, File, Calendar, Package2, Copy, Trash2 } from "lucide-react-na
 import * as Clipboard from "expo-clipboard";
 
 import { styles } from "../styles/descriptionTabStyles"; 
-import { ConfirmationModal } from "../../../shared/components/ConfirmationModal";
+import { ConfirmationModal } from "../../../../shared/components/ConfirmationModal";
 
 interface DescriptionTabProps {
   fileName?: string;

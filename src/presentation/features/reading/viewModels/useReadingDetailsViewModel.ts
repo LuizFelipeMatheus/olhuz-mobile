@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RouteProp, useRoute, useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { AppStackParamList } from "../../../navigation/AppNavigator";
+import { AppStackParamList } from "../../../../navigation/AppNavigator";
 import { ReadingHistoryDto } from "../types/readingModels";
 
 type ReadingDetailsRouteProp = RouteProp<AppStackParamList, "ReadingDetails">;

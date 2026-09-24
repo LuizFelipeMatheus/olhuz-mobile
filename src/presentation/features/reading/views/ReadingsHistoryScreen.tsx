@@ -4,13 +4,13 @@ import { CompositeScreenProps } from "@react-navigation/native";
 import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { BottomTabParamList } from "../../../navigation/BottomTabNavigator";
-import { AppStackParamList } from "../../../navigation/AppNavigator";
+import { BottomTabParamList } from "../../../../navigation/BottomTabNavigator";
+import { AppStackParamList } from "../../../../navigation/AppNavigator";
 
 import { styles } from "../styles/readingsHistoryStyles";
 import { CalendarDays } from "lucide-react-native";
-import { ReadingItem } from "../../../shared/components/ReadingItem";
-import { truncateText } from "../../../shared/utils/text";
+import { ReadingItem } from "../../../../shared/components/ReadingItem";
+import { truncateText } from "../../../../shared/utils/text";
 
 import { useReadingsViewModel } from "../viewModels/useReadingsHistoryViewModel";
 

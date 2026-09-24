@@ -6,9 +6,9 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { ChatTab } from "./ChatTab";
 import { DescriptionTab } from "./DescriptionTab";
 import { useReadingDetailsViewModel } from "../viewModels/useReadingDetailsViewModel";
-import { BASE_URL } from "../../../core/api/endpoints";
+import { BASE_URL } from "../../../../core/api/endpoints";
 import { styles } from "../styles/readingsDetailsStyles"; 
-import { getFileUrl } from "../../../shared/utils/fileUtils";
+import { getFileUrl } from "../../../../shared/utils/fileUtils";
 
 const Tab = createMaterialTopTabNavigator();
 const DEFAULT_IMAGE = require("../../../assets/img/por-do-sol-na-praia.jpg");

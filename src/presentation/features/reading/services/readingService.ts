@@ -1,6 +1,6 @@
-import api from "../../../core/api/api";
-import { ENDPOINTS } from "../../../core/api/endpoints";
-import { ApiResponse } from "../../../core/api/types";
+import api from "../../../../core/api/api";
+import { ENDPOINTS } from "../../../../core/api/endpoints";
+import { ApiResponse } from "../../../../core/api/types";
 import { ReadingHistoryDto } from "../types/readingModels";
 import { Platform } from "react-native";
 

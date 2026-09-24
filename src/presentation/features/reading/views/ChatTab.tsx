@@ -3,7 +3,7 @@ import { View, TextInput, Text, ScrollView, Image } from "react-native";
 import { Mic } from "lucide-react-native";
 import { styles } from "../styles/chatTabStyles"; 
 
-const chatBotImg = require("../../../assets/img/chat-bot.png");
+const chatBotImg = require("../../../../assets/img/chat-bot.png");
 
 export const ChatTab = () => {
   return (
