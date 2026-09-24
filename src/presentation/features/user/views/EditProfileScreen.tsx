@@ -1,5 +1,6 @@
 // Importações do React
 import React, { useState } from "react";
+import { styles } from "../styles/editProfileStyles";
 
 // Componentes do React Native
 import {
