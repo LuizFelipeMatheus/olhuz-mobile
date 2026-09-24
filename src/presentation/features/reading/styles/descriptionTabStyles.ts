@@ -1,27 +1,26 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { COLORS } from "./AppTheme";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   mainWrapper: {
     flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: "#FFF",
   },
   container: {
     flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: "#FFF",
     alignItems: "center",
     gap: 12,
   },
   descriptionContainer: {
     width: "100%",
-    backgroundColor: COLORS.white,
+    backgroundColor: "#FFF",
     alignItems: "stretch",
     justifyContent: "center",
     paddingVertical: 18,
     paddingHorizontal: 14,
     borderRadius: 10,
-    shadowColor: COLORS.black,
+    shadowColor: "#000",
     borderWidth: 1,
     borderColor: "#D9D9D9",
     gap: 12,
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "600",
-    color: COLORS.black,
+    color: "#000",
   },
   listenButton: {
     flexDirection: "row",
@@ -90,7 +89,7 @@ const styles = StyleSheet.create({
   infoLabel: {
     fontSize: 14,
     fontWeight: "500",
-    color: COLORS.black,
+    color: "#000",
   },
   infoValue: {
     fontSize: 14,
@@ -102,7 +101,7 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: COLORS.white,
+    backgroundColor: "#FFF",
     paddingVertical: 16,
     paddingHorizontal: 14,
     borderWidth: 1,
@@ -113,12 +112,11 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     gap: 8,
+    flex: 1,
   },
   optionLabel: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: "500",
     color: "#222225",
   },
 });
-
-export default styles;

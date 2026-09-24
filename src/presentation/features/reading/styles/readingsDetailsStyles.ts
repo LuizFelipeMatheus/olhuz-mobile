@@ -1,18 +1,17 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { COLORS } from "./AppTheme";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FEFEFE",
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingTop: 60,
     paddingBottom: 12,
   },
   backButton: {
     position: "absolute",
-    top: 32,
+    top: 48,
     left: 20,
     zIndex: 1,
     backgroundColor: "#F6F6F7",
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
   readingDetailsTitle: {
     fontSize: 18,
     fontWeight: "600",
-    color: COLORS.black,
+    color: "#000",
   },
   readingDetailsInfoRow: {
     flexDirection: "row",
@@ -80,6 +79,24 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#0B0B0B",
   },
+  modalBackground: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.9)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  fullScreenImage: {
+    width: "100%",
+    height: "80%",
+    resizeMode: "contain",
+  },
+  closeModalButton: {
+    position: "absolute",
+    top: 50,
+    right: 20,
+    zIndex: 10,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    borderRadius: 20,
+    padding: 8,
+  },
 });
-
-export default styles;

@@ -1,11 +1,10 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { COLORS } from "./AppTheme";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.white,
+        backgroundColor: "#FFF",
         alignItems: "stretch",
         gap: 12,
     },
@@ -91,5 +90,3 @@ const styles = StyleSheet.create({
         marginTop: 4,
     },
 });
-
-export default styles;

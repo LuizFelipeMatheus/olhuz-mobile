@@ -5,7 +5,7 @@ import { Text, View } from 'react-native';
 import { BottomTabNavigator } from './BottomTabNavigator';
 import { EditProfileScreen } from '../features/user/views/EditProfileScreen';
 import { ReadingHistoryDto } from '../features/reading/types/readingModels';
-import { ReadingDetailsScreen } from '../presentation/views/readings/ReadingDetails/ReadingDetailsScreen';
+import { ReadingDetailsScreen } from '../presentation/features/readings/ReadingDetails/ReadingDetailsScreen';
 
 const ChangePasswordScreen = () => <View><Text>Alterar Senha</Text></View>;
 

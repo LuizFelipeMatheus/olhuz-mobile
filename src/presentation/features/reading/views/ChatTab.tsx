@@ -1,15 +1,14 @@
 import React from "react";
-import { View, TextInput, Text, ScrollView, Image} from "react-native";
+import { View, TextInput, Text, ScrollView, Image } from "react-native";
 import { Mic } from "lucide-react-native";
-import { COLORS } from "../../../theme/AppTheme";
-import styles from "../../../theme/ChatTabStyles";
+import { styles } from "../styles/chatTabStyles"; 
 
-const chatBotImg = require('../../../../../assets/img/chat-bot.png');
+const chatBotImg = require("../../../assets/img/chat-bot.png");
 
 export const ChatTab = () => {
   return (
     <View style={styles.container}>
-      <ScrollView style={{ flex: 1, backgroundColor: COLORS.white}} contentContainerStyle={{ flexGrow: 1}}>
+      <ScrollView style={{ flex: 1, backgroundColor: "#FFF" }} contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.chatMessage}>
           <View style={styles.chatMessageImage}>
             <Image source={chatBotImg} style={styles.chatMessageImage} />
@@ -59,7 +58,7 @@ export const ChatTab = () => {
           style={styles.input}
         />
         <View style={styles.micIcon}>
-          <Mic size={24} color={COLORS.white} strokeWidth={1.6} />
+          <Mic size={24} color="#FFF" strokeWidth={1.6} />
         </View>
       </View>
       <Text style={styles.infoText}>As respostas são baseadas na descrição gerada pelo app.</Text>
