@@ -28,13 +28,9 @@ export const EditarPerfilScreen = () => {
   // States
 
   const [nome, setNome] = useState("Nome Sobrenome");
-
   const [dataNascimento] = useState("00/00/0000");
-
   const [email, setEmail] = useState("email@email.com");
-
   const [telefone, setTelefone] = useState("(11) 99999-9999");
-
   const [cpf] = useState("000.000.000-00");
 
   

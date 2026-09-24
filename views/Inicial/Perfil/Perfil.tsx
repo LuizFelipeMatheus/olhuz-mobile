@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { User, CalendarDays, Mail, Phone, FileUser } from 'lucide-react-native';
-import { PencilLine } from "lucide-react-native";
-export const PerfilScreen = () => {
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { User, CalendarDays, Mail, Phone, FileUser, PencilLine } from 'lucide-react-native';
 
-     
+export const PerfilScreen = () => {
     const dadosUsuario = [
         {
             id: '1',
@@ -40,6 +38,25 @@ export const PerfilScreen = () => {
 
     return (
         <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+            {/* Cabeçalho do Topo */}
+            <View style={styles.headerCard}>
+                <View style={styles.headerTextContainer}>
+                    <Text style={styles.headerTitle}>Perfil</Text>
+                    <Text style={styles.headerSubTitle}>
+                        Gerencie suas informações pessoais de forma segura
+                    </Text>
+                </View>
+                
+                {/* Imagem/Ícone do Olho */}
+                <View style={styles.logoCircle}>
+                    <Image 
+                        source={require('../../assets/logo.png')} // Substitua pelo caminho correto da sua imagem
+                        style={styles.logoImage}
+                        resizeMode="contain"
+                    />
+                </View>
+            </View>
+
             <Text style={styles.mainTitle}>Informações Pessoais</Text>
 
             {dadosUsuario.map((item) => (
@@ -57,12 +74,12 @@ export const PerfilScreen = () => {
                 </View>
             ))}
 
-          
-            <TouchableOpacity style={styles.editButton} 
-            onPress={() => console.log('Editar dados')} >
-                <PencilLine size={20}  color="#fff" style={{ marginRight: 10, marginLeft: -115, top: 1 }} />
+            <TouchableOpacity 
+                style={styles.editButton} 
+                onPress={() => console.log('Editar dados')}
+            >
+                <PencilLine size={20} color="#fff" />
                 <Text style={styles.editButtonText}>Editar dados</Text>
-                
             </TouchableOpacity>
         </ScrollView>
     );
@@ -72,10 +89,47 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        top: 170,
     },
     content: {
         padding: 20,
+        paddingTop: 50, // Garante espaço para a barra de status
+    },
+    // Estilos do Cabeçalho
+    headerCard: {
+        backgroundColor: '#EBF3FF',
+        borderRadius: 16,
+        padding: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 24,
+    },
+    headerTextContainer: {
+        flex: 1,
+        paddingRight: 12,
+    },
+    headerTitle: {
+        fontSize: 26,
+        fontWeight: 'bold',
+        color: '#0F172A',
+        marginBottom: 6,
+    },
+    headerSubTitle: {
+        fontSize: 14,
+        color: '#4B6B94',
+        lineHeight: 18,
+    },
+    logoCircle: {
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: '#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    logoImage: {
+        width: 40,
+        height: 40,
     },
     mainTitle: {
         fontSize: 20,
@@ -116,19 +170,20 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#1D3D87',
     },
-    // Estilos do Botão
+    // Estilos do Botão Refatorados (sem margens negativas)
     editButton: {
         backgroundColor: '#1D3D87',
-        paddingVertical: 12,
+        paddingVertical: 14,
         borderRadius: 12,
+        flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center',
         marginTop: 10,
+        gap: 10,
     },
     editButtonText: {
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
-        alignContent: 'center',
-        marginTop: -20,
     },
 });

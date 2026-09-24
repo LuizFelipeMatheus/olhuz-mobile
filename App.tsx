@@ -9,7 +9,8 @@ import { LoginScreen } from "./views/LoginPage/Login";
 import { TokenScreen } from "./views/ReceberTokenPage/TokenPage";
 import { AlterarSenhaScreen } from "./views/AlterarSenhaPage/AlterarSenhaPage";
 import { ValidarTokenScreen } from "./views/RegisterPage/ValidarTokenPage/ValidarTokenPage";
-import { PerfilScreen } from "./views/Perfil/Perfil";
+import { PerfilScreen } from "./views/Inicial/Perfil/Perfil";
+import { ConfiguracoesScreen } from "./views/Inicial/Configuracoes";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -19,6 +20,8 @@ export type RootStackParamList = {
   TokenScreen: undefined;
   AlterarSenhaScreen: { email: string };
   ValidarTokenScreen: { email: string };
+  PerfilScreen: undefined;
+  ConfiguracoesScreen: undefined;
   };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -61,7 +64,7 @@ export default function App() {
         /> */}
         <Stack.Screen
           name="Register"
-          component={PerfilScreen}
+          component={RegisterScreen}
         />
 
       </Stack.Navigator>

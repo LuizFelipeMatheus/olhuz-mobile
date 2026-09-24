@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const InicialViewModel = () => {
+const ConfiguracoesViewModel = () => {
     const [values, setValues] = useState({
 
     });
@@ -13,7 +13,7 @@ const InicialViewModel = () => {
     return {... values, onChange}
 
 }
-export default InicialViewModel;
+export default ConfiguracoesViewModel;
 
 
 

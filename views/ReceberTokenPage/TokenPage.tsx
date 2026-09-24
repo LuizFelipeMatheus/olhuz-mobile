@@ -10,8 +10,8 @@ import {
 
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { User } from 'lucide-react-native';
 import { RootStackParamList } from "../../App";
+import { TokenViewModel } from "./ViewModelToken";
 
 export function TokenScreen() {
   const navigation =
@@ -21,6 +21,7 @@ export function TokenScreen() {
 
   return (
     <View style={styles.container}>
+      {/* VOLTAR */}
       <TouchableOpacity
         style={styles.back}
         onPress={() => navigation.goBack()}
@@ -28,12 +29,16 @@ export function TokenScreen() {
         <Text style={styles.backText}>←</Text>
       </TouchableOpacity>
 
+      {/* TÍTULO */}
       <Text style={styles.title}>Receber Token</Text>
 
+      {/* DESCRIÇÃO */}
       <Text style={styles.description}>
-        Insira seu e-mail cadastrado para receber o token de segurança
+        Insira seu e-mail cadastrado para{"\n"}
+        receber o token de segurança
       </Text>
 
+      {/* CAMPO */}
       <View style={styles.form}>
         <Text style={styles.label}>E-mail</Text>
 
@@ -48,20 +53,22 @@ export function TokenScreen() {
         />
       </View>
 
+      {/* BOTÃO */}
       <TouchableOpacity
         style={styles.button}
         onPress={enviarToken}
       >
-        {/* NAO ESQUECER DE COLOCAR IMAGEM NO BOTAO DE ENVIAR <Image
-          source={require("../../assets/iconentrar.png")}
+        <Image
+          source={require("../../../../assets/iconentrar.png")}
           style={styles.icon}
-        /> */}
+        />
 
         <Text style={styles.buttonText}>
           Enviar token
         </Text>
       </TouchableOpacity>
 
+      {/* RODAPÉ */}
       <Text style={styles.footer}>
         Se você não receber o e-mail,{"\n"}
         verifique na sua caixa de spam
@@ -73,59 +80,65 @@ export function TokenScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
+    backgroundColor: "#FFFFFF",
     paddingHorizontal: 30,
   },
 
   back: {
-    marginTop: 50,
+    position: "absolute",
+    top: 48,
+    left: 30,
+    zIndex: 10,
   },
 
   backText: {
     fontSize: 32,
-    color: "#101B73",
+    color: "#1A237E",
+    fontWeight: "400",
   },
 
   title: {
-    marginTop: 35,
-    fontSize: 36,
+    marginTop: 110,
+    fontSize: 32,
     fontWeight: "700",
-    color: "#101B73",
+    color: "#1A237E",
     textAlign: "center",
   },
 
   description: {
     marginTop: 18,
     textAlign: "center",
-    color: "#222",
-    fontSize: 18,
-    lineHeight: 26,
+    color: "#222222",
+    fontSize: 16,
+    lineHeight: 24,
     paddingHorizontal: 10,
   },
 
   form: {
-    marginTop: 70,
+    marginTop: 50,
   },
 
   label: {
-    color: "#101B73",
+    color: "#1A237E",
     marginBottom: 8,
     marginLeft: 10,
-    fontSize: 16,
+    fontSize: 15,
+    fontWeight: "600",
   },
 
   input: {
     height: 48,
     borderWidth: 1.5,
-    borderColor: "#101B73",
+    borderColor: "#1A237E",
     borderRadius: 25,
     paddingHorizontal: 18,
     backgroundColor: "#F2F2F2",
     fontSize: 16,
+    color: "#222222",
   },
 
   button: {
-    marginTop: 70,
+    marginTop: 50,
     height: 52,
     backgroundColor: "#1F9700",
     borderRadius: 28,
@@ -139,12 +152,12 @@ const styles = StyleSheet.create({
     height: 20,
     resizeMode: "contain",
     marginRight: 10,
-    tintColor: "#FFF",
+    tintColor: "#FFFFFF",
   },
 
   buttonText: {
-    color: "#FFF",
-    fontSize: 22,
+    color: "#FFFFFF",
+    fontSize: 20,
     fontWeight: "700",
   },
 
@@ -154,8 +167,8 @@ const styles = StyleSheet.create({
     left: 30,
     right: 30,
     textAlign: "center",
-    color: "#222",
-    fontSize: 15,
-    lineHeight: 22,
+    color: "#222222",
+    fontSize: 13,
+    lineHeight: 18,
   },
 });

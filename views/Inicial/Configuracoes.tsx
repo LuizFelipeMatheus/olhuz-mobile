@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Switch } from 'react-native';
 import Slider from '@react-native-community/slider';
 
-export const InicialScreen = () => {
+export const ConfiguracoesScreen = () => {
     const [leituraAtiva, setLeituraAtiva] = useState(true);
     const [velocidade, setVelocidade] = useState('1.0x');
     const [tipoVoz, setTipoVoz] = useState('Masculina');
