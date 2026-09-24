@@ -2,10 +2,10 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons'; // Biblioteca de ícones padrão do Expo
 
-import { HomeScreen } from '../features/Home/views/HomeScreen';
-import { ProfileScreen } from '../features/user/views/ProfileScreen';
-import { PreferencesScreen } from '../features/preferences/views/PreferencesScreen';
-import { ReadingsHistoryScreen } from '../features/reading/views/ReadingsHistoryScreen';
+import { HomeScreen } from '../presentation/features/home/views/HomeScreen';
+import { ProfileScreen } from '../presentation/features/user/views/ProfileScreen';
+import { PreferencesScreen } from '../presentation/features/preferences/views/PreferencesScreen';
+import { ReadingsHistoryScreen } from '../presentation/features/reading/views/ReadingsHistoryScreen';
 
 export type BottomTabParamList = {
     Home: undefined;

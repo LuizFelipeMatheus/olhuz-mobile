@@ -3,10 +3,15 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, View } from 'react-native';
 import { BottomTabNavigator } from './BottomTabNavigator';
-import { EditProfileScreen } from '../features/user/views/EditProfileScreen';
-import { ReadingHistoryDto } from '../features/reading/types/readingModels';
-import { ReadingDetailsScreen } from '../presentation/features/readings/ReadingDetails/ReadingDetailsScreen';
+import { EditProfileScreen } from '../presentation/features/user/views/EditProfileScreen';
+import { ReadingHistoryDto } from '../presentation/features/reading/types/readingModels';
+import { ReadingDetailsScreen } from '../presentation/features/reading/views/ReadingDetailsScreen';
 
+// ================================================
+// MOCKS DAS TELAS SECUNDÁRIAS PRIVADAS
+// ================================================
+// const ReadingDetailsScreen = () => <View><Text>Leitura Individual</Text></View>;
+// const EditProfileScreen = () => <View><Text>Editar Perfil</Text></View>;
 const ChangePasswordScreen = () => <View><Text>Alterar Senha</Text></View>;
 
 // ================================================

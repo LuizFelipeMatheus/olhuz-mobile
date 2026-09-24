@@ -1,14 +1,12 @@
 // Contém as rotas públicas do app
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { WelcomeScreen } from '../features/auth/views/WelcomeScreen';
-import { RegisterScreen } from '../features/auth/views/RegisterScreen';
-import { LoginScreen } from '../features/auth/views/LoginScreen';
-import { ForgotPasswordScreen } from '../features/auth/views/ForgotPasswordScreen';
-import { VerifyTokenScreen } from '../features/auth/views/VerifyTokenScreen';
-import { ResetPasswordScreen } from '../features/auth/views/ResetPassword';
-
-
+import { WelcomeScreen } from '../presentation/features/auth/views/WelcomeScreen';
+import { RegisterScreen } from '../presentation/features/auth/views/RegisterScreen';
+import { LoginScreen } from '../presentation/features/auth/views/LoginScreen';
+import { ForgotPasswordScreen } from '../presentation/features/auth/views/ForgotPasswordScreen';
+import { VerifyTokenScreen } from '../presentation/features/auth/views/VerifyTokenScreen';
+import { ResetPasswordScreen } from '../presentation/features/auth/views/ResetPassword';
 
 // ================================================
 // TIPAGEM DA PILHA PÚBLICA

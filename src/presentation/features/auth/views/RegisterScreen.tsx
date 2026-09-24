@@ -13,10 +13,11 @@ import { User } from 'lucide-react-native';
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../../../App";
-import { RegisterViewModel } from "./ViewModelRegister";
+import { RegisterViewModel } from "../viewModels/ViewModelRegister";
 import { UserPlus } from "lucide-react-native";
 import { Use } from "react-native-svg";
 import { styles } from "../styles/registerStyles";
+
 
 export const RegisterScreen = () => {
 

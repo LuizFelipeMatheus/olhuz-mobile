@@ -1,5 +1,4 @@
 import React from "react";
-import { COLORS } from "../presentation/theme/AppTheme";
 import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { ArrowRight, Icon } from "lucide-react-native";
@@ -29,20 +28,23 @@ export const ButtonCard = ({
         colors={[bgColorOne, bgColorTwo]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
-        style={[styles.gradientFill, {borderColor: iconColor}]}>
-        <View style={styles.btnContent}>
-          <View style={styles.iconContainer}>
-            <IconComponent size={60} color={iconColor} />
-          </View>
-          <View style={styles.txtContainer}>
-            <Text style={styles.btnTitle}>{title}</Text>
-            <Text style={styles.btnDescription}>{description}</Text>
-            <View style={styles.bgArrow}>
-              <ArrowRight size={26} color={COLORS.txtDark} />
+        style={[styles.gradientFill, { borderColor: iconColor }]}>
+        <View style={styles.container}>
+          <View style={styles.content}>
+            <View style={styles.iconContainer}>
+              <IconComponent size={50} color={iconColor} />
             </View>
-        </View>
+            <View style={styles.txtContainer}>
+              <Text style={styles.btnTitle}>{title}</Text>
+              <Text style={styles.btnDescription}>{description}</Text>
+            </View>
+          </View>
+          <View style={styles.bgArrow}>
+            <ArrowRight size={28} color="#111330" />
+          </View>
         </View>
       </LinearGradient>
+
     </TouchableOpacity>
   );
 };
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    shadowColor: COLORS.black,
+    shadowColor: "#000",
     shadowOffset: { width: -2, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 8,
@@ -63,48 +65,49 @@ const styles = StyleSheet.create({
   },
   gradientFill: {
     flex: 1,
-    paddingVertical: 40,
-    paddingHorizontal: 20,
     width: "100%",
     borderRadius: 10,
     borderWidth: 1,
   },
-  btnContent: {
+  container: {
+    alignItems: "center",
+    paddingVertical: 40,
+    paddingHorizontal: 20,
+    position: "relative",
+  },
+  content: {
     width: "100%",
-    height: "100%",
     flexDirection: "row",
     gap: 20,
     alignItems: "center",
+    marginBottom: 20,
   },
   iconContainer: {
-    backgroundColor: COLORS.white,
+    backgroundColor: "#FFF",
     borderRadius: "50%",
-    padding: 14,
+    padding: 12,
   },
   txtContainer: {
-    width: "100%",
-    height: "100%",
     flexDirection: "column",
     alignItems: "flex-start",
     justifyContent: "flex-start",
-    gap: 10,
+    gap: 6,
     flexShrink: 1,
-    position: "relative",
   },
   btnTitle: {
-    color: COLORS.txtDark,
+    color: "#111330",
     fontSize: 20,
     fontWeight: "bold",
   },
   btnDescription: {
-    color: COLORS.txtGray,
+    color: "#464646",
     fontSize: 18,
   },
   bgArrow: {
     position: "absolute",
-    bottom: -20,
-    right: 0,
-    backgroundColor: COLORS.white,
+    bottom: 14,
+    right: 14,
+    backgroundColor: "#FFF",
     borderRadius: "50%",
     padding: 4,
   },
