@@ -1,29 +1,39 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// Contém o fluxo das rotas para os usuários logados
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Text, View } from 'react-native';
+import { BottomTabNavigator } from './BottomTabNavigator';
+import { EditProfileScreen } from '../features/user/views/EditProfileScreen';
+import { ReadingHistoryDto } from '../features/reading/types/readingModels';
+import { ReadingDetailsScreen } from '../features/reading/views/ReadingDetailsScreen';
 
-/*import { AuthStack } from "./AuthStack";*/
-import { MainTabs } from "./MainTabs";
-import type { RootStackParamList } from "../types/navigation";
-import { ReadingDetailsScreen } from "../presentation/views/readings/ReadingDetails/ReadingDetails";
+const ChangePasswordScreen = () => <View><Text>Alterar Senha</Text></View>;
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+// ================================================
+// TIPAGEM DA PILHA PRIVADA
+// ================================================
+export type AppStackParamList = {
+    BottomTabs: undefined;
+    ReadingDetails: { item: ReadingHistoryDto };
+    EditProfile: undefined;
+    ChangePassword: undefined;
+};
 
-export function AppNavigator() {
-  return (
-    <Stack.Navigator id="app-stack" screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen
-        name="Auth"
-        component={AuthStack}
-      /> */}
+const Stack = createNativeStackNavigator<AppStackParamList>();
 
-      <Stack.Screen
-        name="MainTabs"
-        component={MainTabs}
-      />
-
-      <Stack.Screen
-        name="ReadingDetails"
-        component={ReadingDetailsScreen}
-      />
-    </Stack.Navigator>
-  );
-}
+export const AppNavigator = () => {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false,
+                animation: 'fade',
+            }}
+            initialRouteName="BottomTabs"
+        >
+            <Stack.Screen name="BottomTabs" component={BottomTabNavigator} />
+            <Stack.Screen name="ReadingDetails" component={ReadingDetailsScreen} />
+            <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+            <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
+        </Stack.Navigator>
+    );
+};

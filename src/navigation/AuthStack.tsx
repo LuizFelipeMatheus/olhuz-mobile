@@ -1,24 +1,44 @@
-/*import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// Contém as rotas públicas do app
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { WelcomeScreen } from '../features/auth/views/WelcomeScreen';
+import { RegisterScreen } from '../features/auth/views/RegisterScreen';
+import { LoginScreen } from '../features/auth/views/LoginScreen';
+import { ForgotPasswordScreen } from '../features/auth/views/ForgotPasswordScreen';
+import { VerifyTokenScreen } from '../features/auth/views/VerifyTokenScreen';
+import { ResetPasswordScreen } from '../features/auth/views/ResetPassword';
 
-import { LoginScreen } from "../presentation/views/login/Login";
-import { RegisterScreen } from "../Presentation/Views/register/Register";
-import { ForgotPasswordScreen } from "../Presentation/Views/forgotPassword/ForgotPassword";
-import { ResetPasswordScreen } from "../Presentation/Views/resetPassword/ResetPassword";
-import type { AuthStackParamList } from "../types/navigation";
+
+
+// ================================================
+// TIPAGEM DA PILHA PÚBLICA
+// ================================================
+export type AuthStackParamList = {
+    Welcome: undefined;
+    Login: undefined;
+    Register: undefined;
+    ForgotPassword: { email?: string; };
+    VerifyToken: { email: string; };
+    ResetPassword: { token: string; email: string; };
+};
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
-export function AuthStack() {
-  return (
-    <Stack.Navigator id="auth-stack">
-      <Stack.Screen name="Login" component={LoginScreen} />
-
-      <Stack.Screen name="Register" component={RegisterScreen} />
-
-      <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-
-      <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-    </Stack.Navigator>
-  );
-}
-*/
+export const AuthNavigator = () => {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false,
+                animation: 'none',
+            }}
+            initialRouteName="Welcome"
+        >
+            <Stack.Screen name="Welcome" component={WelcomeScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Register" component={RegisterScreen} />
+            <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+            <Stack.Screen name="VerifyToken" component={VerifyTokenScreen} />
+            <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+        </Stack.Navigator>
+    );
+};
