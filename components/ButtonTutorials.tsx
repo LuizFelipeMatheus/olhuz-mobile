@@ -22,22 +22,25 @@ export const ButtonTutorials = ({ onPress, title, textColor, bgColor }: ButtonTu
 
 const styles = StyleSheet.create({
     btn: {
-        width: "100%",
-        maxWidth: 171,
+        width: 180,
+        maxWidth: 180,
         height: 60,
         borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',
+        margin: 10,
     },
+    
     btnTxt: {
       fontFamily: 'Open Sans',
         fontWeight: 'bold',
-        width: 171,
-        height: 60,
-        borderRadius: 30,
+        height: 30,
+        borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 24,
+
+                
 
     }
 });
